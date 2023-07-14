@@ -204,6 +204,36 @@ console.log("es11", del);
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
+function newestMovie(movies) {
+  let newest = null;
+
+  for (let i = 0; i < movies.length; i++) {
+    const movie = movies[i];
+    if (!newest || movie.releaseDate > newest.releaseDate) {
+      newest = movie;
+    }
+  }
+
+  return newest;
+}
+
+const movies = [
+  {
+    title: "Film A",
+    releaseDate: new Date("2022-01-01"),
+  },
+  {
+    title: "Film B",
+    releaseDate: new Date("2021-12-15"),
+  },
+  {
+    title: "Film C",
+    releaseDate: new Date("2023-03-10"),
+  },
+];
+
+const result = newestMovie(movies);
+console.log(result); // Stampa: { title: "Film C", releaseDate: <data> }
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
