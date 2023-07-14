@@ -238,6 +238,14 @@ console.log(result); // Stampa: { title: "Film C", releaseDate: <data> }
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
+function countMovies(movies) {
+  return movies.length;
+}
+
+// Esempio di utilizzo della funzione
+const movies = ["Film A", "Film B", "Film C"];
+const result = countMovies(movies);
+console.log(result);
 
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
