@@ -145,26 +145,44 @@ console.log(oggi);
       values: [3, 3, 4]
   }
 */
-function rollTheDices(n1) {
-  sum: 0;
-  values = [];
-  for (let i = 0; i < n1; i++) {
-    const value = dice();
-    result.sum += value;
-    result.values.push(value);
-  }
-  return result;
-}
-const roll = rollTheDices(3);
-console.log(roll);
+
+// function rollTheDices(n1) {
+//   const result = {
+//     sum: 0
+//       values : []}
+
+//   for (let i = 0; i < n1; i++) {
+//     const value = dice();
+//     result.sum += value;
+//     result.values.push(value);
+//   }
+//   return result;
+// }
+// const cro = rollTheDices(3);
+// console.log(cro);
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
-
+function howManyDays(Date) {}
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+function isTodayMyBirthday() {
+  const today = new Date();
+  const dd = today.getDate();
+  const mm = today.getMonth() + 1;
 
+  const myBirthdayDay = 19;
+  const myBirthdayMonth = 7;
+
+  if (dd === myBirthdayDay && mm === myBirthdayMonth) {
+    return true;
+  } else {
+    return false;
+  }
+}
+let obj = isTodayMyBirthday();
+console.log("es10", obj);
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
@@ -173,7 +191,16 @@ console.log(roll);
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
-
+function deleteProp(obj, string) {
+  const myobj = {
+    name: "Andrea",
+    cognome: "Ferrara",
+  };
+  delete myobj[string];
+  return myobj;
+}
+const del = deleteProp(myobj, "name");
+console.log("es11", del);
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
