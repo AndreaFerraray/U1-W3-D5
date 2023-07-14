@@ -262,7 +262,6 @@ function onlyTheYears(movies) {
   return years;
 }
 
-// Esempio di utilizzo della funzione
 const movies = [
   { title: "Film A", releaseDate: new Date("2022-01-01") },
   { title: "Film B", releaseDate: new Date("2021-12-15") },
