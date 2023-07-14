@@ -279,7 +279,29 @@ function onlyInLastMillennium(movies) {
 
   for (let i = 0; i < movies.length; i++) {
     const movie = movies[i];
-    const releaseYear = movie.releaseDate.getFullYear();
+    const releaseYear = parseInt(movie.Year);
+
+    if (releaseYear >= 2000 && releaseYear <= 2099) {
+      lastMillenniumMovies.push(movie);
+    }
+  }
+
+  return lastMillenniumMovies;
+}
+
+const result = onlyInLastMillennium(movies);
+console.log('es15',result);
+
+
+/* ESERCIZIO 16
+  Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
+*/
+function onlyInLastMillennium(movies) {
+  const lastMillenniumMovies = [];
+
+  for (let i = 0; i < movies.length; i++) {
+    const movie = movies[i];
+    const releaseYear = parseInt(movie.Year);
 
     if (releaseYear >= 2000 && releaseYear <= 2999) {
       lastMillenniumMovies.push(movie);
@@ -289,19 +311,8 @@ function onlyInLastMillennium(movies) {
   return lastMillenniumMovies;
 }
 
-const movies = [
-  { title: "Film A", releaseDate: new Date("1995-06-22") },
-  { title: "Film B", releaseDate: new Date("2010-09-10") },
-  { title: "Film C", releaseDate: new Date("1998-12-31") },
-  { title: "Film D", releaseDate: new Date("2025-03-05") },
-];
-
 const result = onlyInLastMillennium(movies);
-console.log("es 15", result);
-
-/* ESERCIZIO 16
-  Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
-*/
+console.log('es,16'result);
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
