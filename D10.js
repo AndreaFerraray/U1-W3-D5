@@ -250,6 +250,27 @@ console.log(result);
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
+function onlyTheYears(movies) {
+  const years = [];
+
+  for (let i = 0; i < movies.length; i++) {
+    const movie = movies[i];
+    const releaseYear = movie.releaseDate.getFullYear();
+    years.push(releaseYear);
+  }
+
+  return years;
+}
+
+// Esempio di utilizzo della funzione
+const movies = [
+  { title: "Film A", releaseDate: new Date("2022-01-01") },
+  { title: "Film B", releaseDate: new Date("2021-12-15") },
+  { title: "Film C", releaseDate: new Date("2023-03-10") },
+];
+
+const result = onlyTheYears(movies);
+console.log(result); // Stampa: [2022, 2021, 2023]
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
