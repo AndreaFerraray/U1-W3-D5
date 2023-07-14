@@ -317,12 +317,51 @@ console.log('es,16'result);
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+function searchByTitle(searchTerm, movies) {
+  const matchingMovies = [];
+
+  for (let i = 0; i < movies.length; i++) {
+    const movie = movies[i];
+
+    if (movie.Title.toLowerCase().includes(searchTerm.toLowerCase())) {
+      matchingMovies.push(movie);
+    }
+  }
+
+  return matchingMovies;
+}
+
+
+const searchTerm = "Lord";
+const result = searchByTitle(searchTerm, movies);
+console.log('es17'result);
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
+function searchAndDivide(searchTerm, movies) {
+  const result = {
+    match: [],
+    unmatch: []
+  };
 
+  for (let i = 0; i < movies.length; i++) {
+    const movie = movies[i];
+
+    if (movie.Title.toLowerCase().includes(searchTerm.toLowerCase())) {
+      result.match.push(movie);
+    } else {
+      result.unmatch.push(movie);
+    }
+  }
+
+  return result;
+}
+
+const searchTerm = "Lord";
+const result = searchAndDivide(searchTerm, movies);
+console.log('es18',result);
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
