@@ -269,11 +269,35 @@ const movies = [
 ];
 
 const result = onlyTheYears(movies);
-console.log(result); // Stampa: [2022, 2021, 2023]
+console.log("es14", result); // Stampa: [2022, 2021, 2023]
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
+function onlyInLastMillennium(movies) {
+  const lastMillenniumMovies = [];
+
+  for (let i = 0; i < movies.length; i++) {
+    const movie = movies[i];
+    const releaseYear = movie.releaseDate.getFullYear();
+
+    if (releaseYear >= 2000 && releaseYear <= 2999) {
+      lastMillenniumMovies.push(movie);
+    }
+  }
+
+  return lastMillenniumMovies;
+}
+
+const movies = [
+  { title: "Film A", releaseDate: new Date("1995-06-22") },
+  { title: "Film B", releaseDate: new Date("2010-09-10") },
+  { title: "Film C", releaseDate: new Date("1998-12-31") },
+  { title: "Film D", releaseDate: new Date("2025-03-05") },
+];
+
+const result = onlyInLastMillennium(movies);
+console.log("es 15", result);
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
