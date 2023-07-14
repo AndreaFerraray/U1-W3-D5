@@ -122,13 +122,17 @@ console.log(resul);
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
-function isThisAnEmail(string){
-  if(string=== )
-}
+// function isThisAnEmail(string){
+//   if(string=== )
+// }
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
-
+function whatDayIsIt() {
+  return new Date();
+}
+const oggi = whatDayIsIt();
+console.log(oggi);
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
@@ -141,7 +145,18 @@ function isThisAnEmail(string){
       values: [3, 3, 4]
   }
 */
-
+function rollTheDices(n1) {
+  sum: 0;
+  values = [];
+  for (let i = 0; i < n1; i++) {
+    const value = dice();
+    result.sum += value;
+    result.values.push(value);
+  }
+  return result;
+}
+const roll = rollTheDices(3);
+console.log(roll);
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
