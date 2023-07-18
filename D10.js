@@ -122,17 +122,45 @@ console.log(resul);
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
-// function isThisAnEmail(string){
-//   if(string=== )
-// }
+console.log("Esercizio 6");
+
+const isThisAEmail = (str) => {
+  const x = str.search("@");
+  const y = str.endsWith(".com");
+  if (x === -1 || y === false) return false;
+  else return true;
+};
+const Email = "prova.mail@gmail.com";
+console.log(`La mail inserita è:${Email}`);
+if (isThisAEmail(Email)) {
+  console.log("La mail inserita è valida");
+} else {
+  console.log("La mail inserita non è valida");
+}
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
-function whatDayIsIt() {
-  return new Date();
-}
-const oggi = whatDayIsIt();
-console.log(oggi);
+const whatDayIsIt = () => {
+  const now = new Date();
+  const day = now.getDay();
+  switch (day) {
+    case 0:
+      return "Domenica";
+    case 1:
+      return "Lunedi";
+    case 2:
+      return "Martedi";
+    case 3:
+      return "Mercoledi";
+    case 4:
+      return "Giovedi";
+    case 5:
+      return "Venerdi";
+    case 6:
+      return "Sabato";
+  }
+};
+console.log(`La data di oggi è: ${whatDayIsIt()}`);
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
@@ -163,7 +191,16 @@ console.log(oggi);
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
-function howManyDays(Date) {}
+const howManyDays = (date) => {
+  let now = new Date();
+
+  const ms = 1000 * 60 * 60 * 24;
+  now = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  let d = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+  console.log(`Giorni trascorsi: ${Math.floor((now - d) / ms)}`);
+};
+const date = new Date("2022-7-14");
+howManyDays(date);
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
@@ -365,37 +402,65 @@ console.log('es18',result);
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+const removeIndex = (index) => {
+  movies.splice(index, 1);
+};
+console.log(movies);
+removeIndex(1);
+console.log(movies);
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
-
+const selector = () => {
+  const container = document.getElementById("container");
+};
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
-
+const select = () => {
+  const td = document.getElementsByTagName("td");
+};
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
-
+const printer = () => {
+  const td = document.getElementsByTagName("td");
+  for (let i = 0; i < td.length; i++) {
+    console.log(td[i].innerText);
+  }
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
-
+const background = () => {
+  const a = document.getElementsByTagName("a");
+  for (let i = 0; i < a.length; i++) a[i].style.backgroundColor = "red";
+};
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-
+const addElement = () => {
+  const ul = document.getElementById("myList");
+  const li = document.createElement("li");
+  li.innerText = "Nuovo elemento ";
+  ul.appendChild(li);
+};
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
-
+const svuota = () => {
+  const ul = document.getElementById("myList");
+  ul.innerHTML = "";
+};
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
+const addClass = () => {
+  const tr = document.getElementsByTagName("tr");
+  for (let i = 0; i < tr.length; i++) tr[i].classList.add("test")
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
